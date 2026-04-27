@@ -507,7 +507,6 @@ private enum AppSafetyPolicy {
         "com.mitchellh.ghostty",
         "com.raphaelamorim.rio",
         "dev.commandline.waveterm",
-        "com.google.Chrome",
         "com.openai.atlas.alpha",
         "com.openai.atlas.beta",
         "com.apple.UserNotificationCenter",

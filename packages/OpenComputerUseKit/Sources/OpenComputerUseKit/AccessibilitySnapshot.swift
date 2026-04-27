@@ -409,9 +409,10 @@ private struct TreeRenderer {
         let valueSegment = formattedValueSegment(for: root, roleText: roleText, title: title, value: value)
         let actionsPrefix = (title != nil || inlineRowSummary != nil) ? ", Secondary Actions: " : " Secondary Actions: "
         let actionsSegment = prettyActions.isEmpty ? "" : "\(actionsPrefix)\(prettyActions.joined(separator: ", "))"
+        let frameSegment = localFrame.map { " Frame: \($0.renderedLocalFrame)" } ?? ""
         let linePrefix = roleText.isEmpty ? "\(index)" : "\(index) \(roleText)"
 
-        lines.append("\(String(repeating: "\t", count: depth + 1))\(linePrefix)\(traitsSegment)\(titleSegment)\(rowSummarySegment)\(labelSegment)\(helpSegment)\(identifierSegment)\(valueSegment)\(actionsSegment)")
+        lines.append("\(String(repeating: "\t", count: depth + 1))\(linePrefix)\(traitsSegment)\(titleSegment)\(rowSummarySegment)\(labelSegment)\(helpSegment)\(identifierSegment)\(valueSegment)\(actionsSegment)\(frameSegment)")
 
         let record = ElementRecord(
             index: index,
